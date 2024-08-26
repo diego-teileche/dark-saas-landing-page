@@ -15,9 +15,18 @@ export const Navbar = () => {
               alt="SaaS Landing Page Logo | Diego Tech"
             />
           </div>
-          <div className="inline-flex size-10 items-center justify-center rounded-lg border border-white border-opacity-30">
+          <div className="inline-flex size-10 items-center justify-center rounded-lg border border-white border-opacity-30 sm:hidden">
             <MenuIcon className="text-white" />
           </div>
+
+          <nav className="text-white">
+            <a href="#">About</a>
+            <a href="#">Features</a>
+            <a href="#">Updates</a>
+            <a href="#">Help</a>
+            <a href="#">Customers</a>
+            <button>Get for free</button>
+          </nav>
         </div>
       </div>
     </header>
