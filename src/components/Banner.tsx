@@ -1,3 +1,7 @@
 export const Banner = () => {
-  return null;
-};
+  return (
+    <div className="container">
+      <a href="#">Explore the demo</a>
+    </div>
+  )
+}
