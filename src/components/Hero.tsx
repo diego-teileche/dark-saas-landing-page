@@ -3,8 +3,9 @@ import ArrowWIcon from "@/assets/icons/arrow-w.svg"
 export const Hero = () => {
   return (
     <main>
-      <section className="bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4f21a1_65%,#a46edb_82%)] py-[72px] text-white">
-        <div className="container">
+      <section className="relative overflow-clip bg-[linear-gradient(to_bottom,#000,#200d42_34%,#4f21a1_65%,#a46edb_82%)] py-[72px] text-white">
+        <div className="absolute left-1/2 top-[calc(100%-96px)] h-[375px] w-[750px] -translate-x-1/2 rounded-[100%] border border-[#b48cde] bg-[radial-gradient(closest-side,#000_82%,#9560eb)]"></div>
+        <div className="container relative">
           <div className="flex items-center justify-center">
             <a
               href="#"
