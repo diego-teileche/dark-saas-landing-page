@@ -1,3 +1,5 @@
+import EcosystemIcon from "@/assets/icons/ecosystem.svg"
+
 const features = [
   {
     title: "Integration Ecosystem",
@@ -14,8 +16,30 @@ const features = [
     description:
       "With end-to-end encryption, your data is securely stored and protected from unauthorized access.",
   },
-];
+]
 
 export const Features = () => {
-  return null;
-};
+  return (
+    <section className="bg-black text-white">
+      <div className="container">
+        <h2>Everything you need</h2>
+        <p>
+          Enjoy customizable lists, team work tools, and smart tracking all in
+          one place. Set tasks, get reminders, and see your progress simply and
+          quickly
+        </p>
+        <div>
+          {features.map(({ title, description }) => (
+            <div key={title}>
+              <div>
+                <EcosystemIcon />
+              </div>
+              <h3>{title}</h3>
+              <p>{description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
