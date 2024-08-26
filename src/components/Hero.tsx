@@ -19,12 +19,18 @@ export const Hero = () => {
               </span>
             </a>
           </div>
-          <h1>One Task at a Time</h1>
-          <p>
+          <h1 className="mt-8 text-center text-7xl font-bold tracking-tighter">
+            One Task at a Time
+          </h1>
+          <p className="mt-8 text-center text-xl">
             Celebrate the joy of accomplishment with an app designed to track
-            progress, motivate your efforts, and celebrate your successes
+            your progress, motivate your efforts, and celebrate your successes
           </p>
-          <button>Get for free</button>
+          <div className="mt-8 flex justify-center">
+            <button className="rounded-lg bg-white px-5 py-3 font-medium text-black">
+              Get for free
+            </button>
+          </div>
         </div>
       </section>
     </main>
