@@ -23,11 +23,13 @@ const images = [
 
 export const LogoTicker = () => {
   return (
-    <section className="bg-black text-white">
+    <section className="bg-black py-[72px] text-white sm:py-24">
       <div className="container">
-        <h2>Trusted by the world&apos;s most innovative teams</h2>
-        <div>
-          <div className="flex">
+        <h2 className="text-center text-xl text-white/70">
+          Trusted by the world&apos;s most innovative teams
+        </h2>
+        <div className="relative mt-9 overflow-hidden before:absolute before:left-0 before:top-0 before:h-full before:w-5 before:bg-[linear-gradient(to_right,#000,transparent)] before:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-20 after:bg-[linear-gradient(to_left,#000,transparent)] after:content-['']">
+          <div className="flex gap-16">
             {images.map(({ src, alt }) => (
               <Image
                 key={alt}
