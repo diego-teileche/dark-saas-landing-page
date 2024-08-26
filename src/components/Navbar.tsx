@@ -19,13 +19,40 @@ export const Navbar = () => {
             <MenuIcon className="text-white" />
           </div>
 
-          <nav className="text-white">
-            <a href="#">About</a>
-            <a href="#">Features</a>
-            <a href="#">Updates</a>
-            <a href="#">Help</a>
-            <a href="#">Customers</a>
-            <button>Get for free</button>
+          <nav className="hidden items-center gap-6 sm:flex">
+            <a
+              href="#"
+              className="text-white text-opacity-60 transition hover:text-opacity-100"
+            >
+              About
+            </a>
+            <a
+              href="#"
+              className="text-white text-opacity-60 transition hover:text-opacity-100"
+            >
+              Features
+            </a>
+            <a
+              href="#"
+              className="text-white text-opacity-60 transition hover:text-opacity-100"
+            >
+              Updates
+            </a>
+            <a
+              href="#"
+              className="text-white text-opacity-60 transition hover:text-opacity-100"
+            >
+              Help
+            </a>
+            <a
+              href="#"
+              className="text-white text-opacity-60 transition hover:text-opacity-100"
+            >
+              Customers
+            </a>
+            <button className="rounded-lg bg-white px-4 py-2">
+              Get for free
+            </button>
           </nav>
         </div>
       </div>
