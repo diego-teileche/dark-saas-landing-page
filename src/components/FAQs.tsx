@@ -1,3 +1,5 @@
+import PlusIcon from "@/assets/icons/plus.svg"
+
 const items = [
   {
     question: "What payment methods do you accept?",
@@ -19,8 +21,25 @@ const items = [
     answer:
       "Security is our top priority. We use state-of-the-art encryption and comply with the best industry practices to ensure that your data is stored securely and accessed only by authorized users.",
   },
-];
+]
 
 export const FAQs = () => {
-  return null;
-};
+  return (
+    <section className="bg-black text-white">
+      <div className="container">
+        <h2>Frequently asked questions</h2>
+        <div>
+          {items.map(({ question, answer }) => (
+            <div key={question}>
+              <div>
+                <span>{question}</span>
+                <PlusIcon />
+              </div>
+              <div>{answer}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
