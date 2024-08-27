@@ -12,16 +12,16 @@ export const Footer = () => {
             &copy; 2024 Your Company, Inc. All rights reserved
           </div>
           <ul className="flex justify-center gap-2.5">
-            <li>
+            <li className="cursor-pointer transition duration-300 hover:text-white">
               <InstaIcon />
             </li>
-            <li>
+            <li className="cursor-pointer transition duration-300 hover:text-white">
               <XSocial />
             </li>
-            <li>
+            <li className="cursor-pointer transition duration-300 hover:text-white">
               <TiktokIcon />
             </li>
-            <li>
+            <li className="cursor-pointer transition duration-300 hover:text-white">
               <YoutubeIcon />
             </li>
           </ul>
