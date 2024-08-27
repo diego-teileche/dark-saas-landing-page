@@ -1,7 +1,21 @@
+import helixImage from "@/assets/images/helix2.png"
+import emojiStarImage from "@/assets/images/emojistar.png"
+import Image from "next/image"
+
 export const CallToAction = () => {
   return (
-    <section className="bg-black py-[72px] text-center text-white sm:py-24">
+    <section className="overflow-hidden bg-black py-[72px] text-center text-white sm:py-24">
       <div className="container relative max-w-xl">
+        <Image
+          src={helixImage}
+          className="absolute left-[calc(100%+36px)] top-6"
+          alt="Helix Image | SaaS Landing Page built by Diego Tech"
+        />
+        <Image
+          src={emojiStarImage}
+          className="absolute -top-[100px] right-[calc(100%+24px)]"
+          alt="Emoji Star Image | SaaS Landing Page built by Diego Tech"
+        />
         <h2 className="text-5xl font-bold tracking-tighter sm:text-6xl">
           Get Instant access
         </h2>
