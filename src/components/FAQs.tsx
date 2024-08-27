@@ -1,4 +1,5 @@
 import PlusIcon from "@/assets/icons/plus.svg"
+import MinusIcon from "@/assets/icons/minus.svg"
 import clsx from "clsx"
 import { useState } from "react"
 
@@ -42,12 +43,12 @@ const AccordionItem = ({
     >
       <div className="flex items-center">
         <span className="flex-1 text-lg font-bold">{question}</span>
-        <PlusIcon />
+        {isOpen ? <MinusIcon /> : <PlusIcon />}
       </div>
       <div
-        className={clsx("mt-4", {
-          hidden: !isOpen,
-          "": isOpen === true,
+        className={clsx("mt-4 transition-all duration-500 ease-in-out", {
+          "max-h-0 overflow-hidden opacity-0": !isOpen,
+          "max-h-16 opacity-100": isOpen,
         })}
       >
         {answer}
@@ -58,12 +59,12 @@ const AccordionItem = ({
 
 export const FAQs = () => {
   return (
-    <section className="bg-gradient-to-b from-[#5d2cab] to-black py-[72px] text-white">
+    <section className="bg-gradient-to-b from-[#5d2cab] to-black py-[72px] text-white sm:py-24">
       <div className="container">
-        <h2 className="text-center text-5xl font-bold tracking-tighter">
+        <h2 className="mx-auto text-center text-5xl font-bold tracking-tighter sm:max-w-[648px] sm:text-6xl">
           Frequently asked questions
         </h2>
-        <div className="mt-12">
+        <div className="mx-auto mt-12 max-w-[648px]">
           {items.map(({ question, answer }) => (
             <AccordionItem key={question} question={question} answer={answer} />
           ))}
