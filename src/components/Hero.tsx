@@ -2,6 +2,7 @@ import ArrowWIcon from "@/assets/icons/arrow-w.svg"
 import cursorImage from "@/assets/images/cursor.png"
 import messageImage from "@/assets/images/message.png"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 export const Hero = () => {
   return (
@@ -30,20 +31,34 @@ export const Hero = () => {
                 <br />
                 at a Time
               </h1>
-              <Image
-                src={cursorImage}
-                height="200"
-                width="200"
+              <motion.div
+                drag
+                // dragSnapToOrigin
                 className="absolute right-[476px] top-[108px] hidden sm:inline"
-                alt="Cursor Image | SaaS Landing Page built by Diego Tech"
-              />
-              <Image
-                src={messageImage}
-                height="200"
-                width="200"
+              >
+                <Image
+                  src={cursorImage}
+                  height="200"
+                  width="200"
+                  className="max-w-none"
+                  draggable="false"
+                  alt="Cursor Image | SaaS Landing Page built by Diego Tech"
+                />
+              </motion.div>
+              <motion.div
+                drag
+                // dragSnapToOrigin
                 className="absolute left-[498px] top-[56px] hidden sm:inline"
-                alt="Message Image | SaaS Landing Page built by Diego Tech"
-              />
+              >
+                <Image
+                  src={messageImage}
+                  height="200"
+                  width="200"
+                  className="max-w-none"
+                  draggable="false"
+                  alt="Message Image | SaaS Landing Page built by Diego Tech"
+                />
+              </motion.div>
             </div>
           </div>
           <div className="flex justify-center">
