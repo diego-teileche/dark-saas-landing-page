@@ -5,11 +5,13 @@ import YoutubeIcon from "@/assets/icons/youtube.svg"
 
 export const Footer = () => {
   return (
-    <footer className="bg-black text-white">
+    <footer className="border-t border-white/20 bg-black py-5 text-white/60">
       <div className="container">
-        <div>
-          <div>&copy; 2024 Your Company, Inc. All rights reserved</div>
-          <ul>
+        <div className="flex flex-col gap-4 sm:flex-row sm:justify-between">
+          <div className="text-center">
+            &copy; 2024 Your Company, Inc. All rights reserved
+          </div>
+          <ul className="flex justify-center gap-2.5">
             <li>
               <InstaIcon />
             </li>
