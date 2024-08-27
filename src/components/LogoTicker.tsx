@@ -5,6 +5,7 @@ import celestialLogo from "../assets/images/celestial.png"
 import pulseLogo from "../assets/images/pulse.png"
 import apexLogo from "../assets/images/apex.png"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const images = [
   { src: acmeLogo, alt: "Acme Logo | SaaS Landing Page built by Diego Tech" },
@@ -28,8 +29,17 @@ export const LogoTicker = () => {
         <h2 className="text-center text-xl text-white/70">
           Trusted by the world&apos;s most innovative teams
         </h2>
-        <div className="relative mt-9 overflow-hidden before:absolute before:left-0 before:top-0 before:h-full before:w-5 before:bg-[linear-gradient(to_right,#000,transparent)] before:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-20 after:bg-[linear-gradient(to_left,#000,transparent)] after:content-['']">
-          <div className="flex gap-16">
+        <div className="relative mt-9 flex overflow-hidden before:absolute before:left-0 before:top-0 before:z-10 before:h-full before:w-5 before:bg-[linear-gradient(to_right,#000,transparent)] before:content-[''] after:absolute after:right-0 after:top-0 after:h-full after:w-20 after:bg-[linear-gradient(to_left,#000,transparent)] after:content-['']">
+          <motion.div
+            initial={{ translateX: 0 }}
+            animate={{ translateX: "-50%" }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity,
+            }}
+            className="flex flex-none gap-16 pr-16"
+          >
             {images.map(({ src, alt }) => (
               <Image
                 key={alt}
@@ -38,7 +48,15 @@ export const LogoTicker = () => {
                 alt={alt}
               />
             ))}
-          </div>
+            {images.map(({ src, alt }) => (
+              <Image
+                key={alt}
+                src={src}
+                className="h-8 w-auto flex-none"
+                alt={alt}
+              />
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>
