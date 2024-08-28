@@ -1,9 +1,21 @@
 import Image from "next/image"
 import appScreen from "../assets/images/app-screen.png"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useEffect, useRef } from "react"
 
 export const ProductShowcase = () => {
+  const refImage = useRef<HTMLImageElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: refImage,
+    offset: ["start end", "end end"],
+  })
+
+  const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0])
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1])
+
   return (
-    <section className="bg-gradient-to-b from-black to-[#5d2cab] py-[72px] text-white sm:py-24">
+    <section className="overflow-hidden bg-gradient-to-b from-black to-[#5d2cab] py-[72px] text-white sm:py-24">
       <div className="container">
         <h2 className="text-center text-5xl font-bold tracking-tighter sm:text-6xl">
           Intuitive interface
@@ -16,13 +28,20 @@ export const ProductShowcase = () => {
           </p>
         </div>
       </div>
-      <div className="mx-4 mt-12 flex justify-center">
+      <motion.div
+        style={{
+          opacity,
+          rotateX,
+          transformPerspective: "800px",
+        }}
+        className="mx-4 mt-12 flex justify-center"
+      >
         <Image
+          ref={refImage}
           src={appScreen}
-          className=""
           alt="The product screenshot | SaaS Landing Page built by Diego Tech"
         />
-      </div>
+      </motion.div>
     </section>
   )
 }
