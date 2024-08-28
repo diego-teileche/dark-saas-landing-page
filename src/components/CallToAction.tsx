@@ -1,21 +1,39 @@
 import helixImage from "@/assets/images/helix2.png"
 import emojiStarImage from "@/assets/images/emojistar.png"
 import Image from "next/image"
+import { motion, useScroll, useTransform } from "framer-motion"
+import { useRef } from "react"
 
 export const CallToAction = () => {
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"],
+  })
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [-5, 50])
+
   return (
-    <section className="overflow-hidden bg-black py-[72px] text-center text-white sm:py-24">
+    <section
+      ref={containerRef}
+      className="overflow-hidden bg-black py-[72px] text-center text-white sm:py-24"
+    >
       <div className="container relative max-w-xl">
-        <Image
-          src={helixImage}
-          className="absolute left-[calc(100%+36px)] top-6"
-          alt="Helix Image | SaaS Landing Page built by Diego Tech"
-        />
-        <Image
-          src={emojiStarImage}
-          className="absolute -top-[100px] right-[calc(100%+24px)]"
-          alt="Emoji Star Image | SaaS Landing Page built by Diego Tech"
-        />
+        <motion.div style={{ translateY }}>
+          <Image
+            src={helixImage}
+            className="absolute left-[calc(100%+36px)] top-6"
+            alt="Helix Image | SaaS Landing Page built by Diego Tech"
+          />
+        </motion.div>
+        <motion.div style={{ translateY }}>
+          <Image
+            src={emojiStarImage}
+            className="absolute -top-[100px] right-[calc(100%+24px)]"
+            alt="Emoji Star Image | SaaS Landing Page built by Diego Tech"
+          />
+        </motion.div>
         <h2 className="text-5xl font-bold tracking-tighter sm:text-6xl">
           Get Instant access
         </h2>
