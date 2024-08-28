@@ -1,4 +1,4 @@
-# About the App <img src="./src/assets/images/logosaas.png" width="40px" height="40px" aling="center" alt="SaaS Landing Page Logo | Diego Tech">
+# About the App <img src="./src/assets/images/logosaas.png" width="40px" height="40px" align="center" alt="SaaS Landing Page Logo | Diego Tech">
 
 This is a SaaS Landing Page with Dark Mode built by Diego Tech by using:
 
